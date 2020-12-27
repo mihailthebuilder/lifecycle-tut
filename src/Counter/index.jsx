@@ -11,17 +11,15 @@ export default class Counter extends Component {
 
     this.state = {counter:0};
 
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
   }
 
-  increment() {
+  increment = () => {
     this.setState((state)=>({
       counter: state.counter + 1
     }))
   }
 
-  decrement() {
+  decrement = () => {
     this.setState((state)=>({
       counter: state.counter - 1
     }))
@@ -30,12 +28,15 @@ export default class Counter extends Component {
   render() {
     console.log("Render initiated");
 
+    const { increment, decrement } = this;
+    const { counter } = this.state;
+
     return (
       <div className="counter-container">
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
         <div className="counter">
-          Counter: {this.state.couter}
+          Counter: {counter}
         </div>
       </div>
     )

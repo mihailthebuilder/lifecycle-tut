@@ -1,6 +1,6 @@
-import Counter from "./Counter/Counter.js";
+import Counter from "./Counter";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Counter />
