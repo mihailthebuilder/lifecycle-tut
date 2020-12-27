@@ -10,7 +10,20 @@ export default class Counter extends Component {
     super(props);
 
     this.state = {counter:0};
+  }
 
+  componentDidMount = () => {
+    console.log("Component did mount");
+    console.log("------------------------");
+  }
+
+  componentDidUpdate = (prevProps, prevState, snapshot) => {
+    console.log("Component Did Update");  
+  }
+
+  componentWillUnmount = () => {
+    console.log("Component Will Unmount");
+    console.log("-----------------------");
   }
 
   increment = () => {
